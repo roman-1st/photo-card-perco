@@ -38,11 +38,10 @@ export const ImageModalContainer: FC<ImageModalContainerProps> = ({
         <div className="modal show cursor-default">
             <div className="modal-container d-flex flex-column w-auto align-items-start card h-100" >
                 <h3 className="mt-1">{image.alt_description}</h3>
-                    <img alt={image.alt_description} className="image-modal-lg " src={image.urls.full}/>
-                <div
+                    <img alt={image.alt_description} className="image-modal-lg" src={image.urls.full}/>
+                <img
                     onClick={() => setViewModal(null)}
-                    className={"close-modal cursor-pointer"}
-                />
+                    alt={"close modal button"} src={"./assets/closeModal.svg"} className="close-modal cursor-pointer"/>
                 <div className="h-50px ">
                     <div className="pl-15">
                         <h3>Comments</h3>
@@ -55,7 +54,7 @@ export const ImageModalContainer: FC<ImageModalContainerProps> = ({
                             onKeyDown={ (e: React.KeyboardEvent<HTMLInputElement>) => handleAddCommentEnter(e)}
                             placeholder="Add your comment"
                         />
-                        <button onClick={handleAddComment} className="btn btn-primary ml-10 fs-3">Add+</button>
+                        <button onClick={handleAddComment} className="btn btn-success ml-10 fs-3">Add+</button>
                     </div>
                     <div className="list">
                         { comments.length > 0 &&
