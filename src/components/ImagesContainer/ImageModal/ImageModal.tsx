@@ -36,7 +36,7 @@ export const ImageModalContainer: FC<ImageModalContainerProps> = ({
 
     return (
         <div className="modal show cursor-default">
-            <div className="modal-container d-flex flex-column w-auto align-items-start card h-100" >
+            <div className="modal-container d-flex flex-column align-items-start card h-100" >
                 <h3 className="mt-1">{image.alt_description}</h3>
                     <img alt={image.alt_description} className="image-modal-lg" src={image.urls.full}/>
                 <img
