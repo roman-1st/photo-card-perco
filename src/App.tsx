@@ -1,26 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import {SearchContainer} from "./components/SearchContainer";
+import {ImagesContainer} from "./components/ImagesContainer";
+import {Image} from "./types";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default function App() {
+    const [images, setImages] = useState<Image[]>([])
+
+    return (
+        <div className="w-100 d-flex justify-content-center">
+            <div className="w-75 justify-content-center flex-column mt-20 min-w-350px">
+                <SearchContainer
+                    setImages={setImages}
+                />
+                <ImagesContainer
+                    images={images}
+                />
+            </div>
+        </div>
+    );
 }
-
-export default App;
